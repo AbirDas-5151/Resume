@@ -20,16 +20,18 @@
 
         /* Background AI animation placeholder */
         .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: navy; /* Placeholder for AI-themed visuals */
-            z-index: -1;
-        }
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url('Test.jpg'); /* Replace with your photo URL */
+          background-size: cover;
+          background-position: center;
+          z-index: -1;
+      }
 
-        /* Sidebar */
+      /* Sidebar */
         .sidebar {
             position: fixed;
             top: 0;
@@ -44,12 +46,14 @@
         }
 
         .sidebar img {
-          width: 150px;
-          height: 150px;
+          width: 180px; /* Increased size */
+          height: 180px;
           object-fit: cover;
           border: 5px solid #ffffff;
           margin-bottom: 20px;
-        }
+          border-radius: 10px; /* Slightly rounded corners */
+      }
+
 
         .sidebar nav {
             margin-top: 20px;
@@ -59,16 +63,20 @@
         }
 
         .sidebar nav a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            text-align: center;
-            transition: color 0.3s;
-        }
+          text-decoration: none;
+          color: white;
+          font-size: 18px;
+          text-align: center;
+          transition: all 0.3s;
+          padding: 10px 15px;
+          border-radius: 5px; /* Add a background color on hover */
+      }
 
-        .sidebar nav a:hover {
-            color: #00aaff;
-        }
+      .sidebar nav a:hover {
+          color: white;
+          background-color: #0073e6; /* Bright background for hover */
+          box-shadow: 0 0 5px rgba(0, 115, 230, 0.6);
+      }
 
         /* Center Content */
         .main-content {
