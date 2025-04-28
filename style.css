@@ -1,4 +1,4 @@
-/* General Reset */
+/* General Styles */
 * {
   margin: 0;
   padding: 0;
@@ -6,112 +6,496 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
-  padding: 0 10px;
+  /* --- Font Update --- */
+  font-family: 'Poppins', Arial, sans-serif;
+  /* --- Color Update --- */
+  color: #F0F0F0; /* Off-white for default text */
+  background-color: #111; /* Fallback background */
+  overflow-x: hidden;
 }
 
-header {
-  background-color: #0073e6;
-  color: white;
-  text-align: center;
-  padding: 30px 0;
+/* --- Video Background --- */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -2;
 }
 
-header h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+#bg-video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
 }
 
-header p {
-  font-size: 1.25rem;
-  margin-top: 5px;
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Darker overlay for better contrast */
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: -1;
 }
+/* --- End Video Background --- */
 
-nav {
-  background-color: #333;
-  text-align: center;
-  padding: 10px 0;
-}
-
-nav ul {
-  list-style-type: none;
-}
-
-nav ul li {
-  display: inline;
-  margin: 0 20px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-section {
-  padding: 40px 20px;
-  margin: 30px auto;
-  max-width: 900px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-section h2 {
-  color: #0073e6;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-ul {
-  list-style-type: square;
-  margin-left: 20px;
-}
-
-ul li {
-  margin-bottom: 8px;
-}
-
+/* --- General Link Styling --- */
 a {
-  color: #0073e6;
+   /* --- Color Update --- */
+  color: #21E6C1; /* Bright Cyan/Turquoise */
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #005bb5;
+   /* --- Color Update --- */
+  color: #07BEA0; /* Slightly darker cyan on hover */
+  text-decoration: none; /* Optional: remove underline on hover */
 }
 
-footer {
-  background-color: #333;
-  color: white;
+/* Main Content Area - Ensure centering always works */
+.main-content {
+  margin-left: 250px; /* Account for sidebar width */
+  padding: 50px 40px; /* More vertical padding */
+  height: 100vh;
+  overflow-y: auto; /* Allow scrolling within main content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
   text-align: center;
-  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Headings & Text Styling (Professionalism & Color) --- */
+#main-content h1 {
+  font-size: 2.8rem; /* Slightly adjusted size */
+  /* --- Color Update --- */
+  color: #FFFFFF; /* Pure white for main heading */
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: 600; /* Bolder */
+  letter-spacing: 1px; /* Add slight spacing */
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+#main-content h2 {
+  font-size: 1.6rem; /* Adjusted size */
+  /* --- Color Update --- */
+  color: #E0E0E0; /* Lighter grey */
+  margin-bottom: 25px; /* More space after H2 */
+  font-weight: 400; /* Normal weight */
+  opacity: 0;
+  animation: fadeIn 1.5s 0.2s ease-in-out forwards;
+}
+
+#main-content h3 { /* Used only in initial content */
+  font-size: 1.8rem;
+  color: #21E6C1; /* Use accent color */
+  font-weight: 500; /* Medium weight */
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+  animation-delay: 3s; /* Keep stagger */
+}
+
+/* Specific overrides for initial landing text */
+#main-content.initial-content h1 {
+   font-size: 3.2rem; /* Larger initial H1 */
+   color: #FFFFFF;
+   text-shadow: 2px 2px 8px rgba(33, 230, 193, 0.3); /* Subtle glow matching accent */
+   animation-delay: 0s;
+}
+
+#main-content.initial-content h2 {
+   font-size: 1.7rem;
+   color: #E0E0E0;
+   text-shadow: none;
+   margin-bottom: 20px;
+   animation-delay: 1.5s;
+}
+
+#main-content.initial-content h3 {
+   font-size: 2.0rem; /* Slightly larger */
+   color: #21E6C1; /* Consistent accent */
+   text-shadow: 1px 1px 5px rgba(33, 230, 193, 0.2);
+   animation-delay: 3s;
+}
+
+
+#main-content p {
+  font-size: 1.1rem; /* Standard paragraph size */
+  line-height: 1.8; /* Increase for readability */
+  margin-bottom: 20px;
+  max-width: 750px; /* Consistent max width */
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 300; /* Lighter weight for body text */
+  opacity: 0;
+  animation: fadeIn 1.5s 0.4s ease-in-out forwards;
+}
+
+/* --- Sidebar Styling (Font & Color) --- */
+.sidebar {
   position: fixed;
-  bottom: 0;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85); /* Slightly darker sidebar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 20px; /* Adjust padding */
+  z-index: 10;
+  overflow-y: auto;
+}
+
+.sidebar img {
+  width: 140px; /* Adjusted size */
+  height: 140px;
+  object-fit: cover;
+  margin-bottom: 25px; /* More space */
+  border-radius: 50%;
+  /* --- Color Update --- */
+  border: 4px solid #21E6C1; /* Accent color border */
+  box-shadow: 0 0 15px rgba(33, 230, 193, 0.4); /* Matching glow */
+  flex-shrink: 0;
+}
+
+.sidebar nav {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Adjust gap */
   width: 100%;
 }
 
-/* Responsive Design */
+.sidebar nav a {
+  color: #F0F0F0; /* Off-white link text */
+  font-size: 1.0rem; /* Adjusted size */
+  font-weight: 500; /* Medium weight */
+  text-align: left;
+  transition: all 0.3s ease;
+  padding: 12px 20px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.05); /* Subtle background */
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  border-left: 4px solid transparent; /* Thicker border indicator */
+}
+
+.sidebar nav a:hover {
+   /* --- Color Update --- */
+  background-color: rgba(33, 230, 193, 0.15); /* Light accent bg on hover */
+  color: #FFFFFF; /* Brighter text on hover */
+  border-left-color: #21E6C1; /* Show border on hover */
+}
+
+.sidebar nav a.active-link {
+   /* --- Color Update --- */
+  background-color: rgba(33, 230, 193, 0.25); /* Slightly stronger active bg */
+  color: #FFFFFF; /* White active text */
+  border-left-color: #21E6C1; /* Accent color active border */
+  box-shadow: inset 3px 0 8px rgba(33, 230, 193, 0.1); /* Subtle inner shadow */
+}
+
+.sidebar nav a i {
+  width: 20px; /* Consistent icon width */
+  text-align: center;
+  flex-shrink: 0;
+  font-size: 1.1rem; /* Slightly larger icons */
+   /* --- Color Update --- */
+  color: #A0A0A0; /* Dimmer icon color */
+  transition: color 0.3s ease;
+}
+.sidebar nav a:hover i,
+.sidebar nav a.active-link i {
+   /* --- Color Update --- */
+  color: #21E6C1; /* Bright icon color on hover/active */
+}
+
+.sidebar nav a span {
+  flex-grow: 1;
+}
+
+/* --- Publications Section --- */
+.publications ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+  max-width: 750px;
+  margin: 20px auto;
+}
+
+.publications ul li {
+  margin: 25px 0; /* More spacing */
+  padding: 20px; /* More padding */
+  font-size: 1.05rem; /* Slightly larger list text */
+  line-height: 1.7;
+  font-weight: 300; /* Lighter weight */
+  /* --- Color Update --- */
+  border-left: 5px solid #21E6C1; /* Accent border */
+  background-color: rgba(33, 230, 193, 0.08); /* Subtle accent bg */
+  border-radius: 8px; /* More rounded */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+.publications ul li strong {
+  font-weight: 600; /* Bolder title */
+  color: #FFFFFF; /* White title */
+  display: block; /* Title on its own line */
+  margin-bottom: 8px; /* Space after title */
+}
+.publications ul li em { /* Style the (Under Review) text */
+  color: #A0A0A0; /* Dimmer color for status */
+  font-size: 0.9em;
+}
+
+.publications ul li:nth-child(1) { animation-delay: 0.5s; }
+.publications ul li:nth-child(2) { animation-delay: 0.7s; }
+
+.publications ul li:hover {
+  transform: translateY(-5px); /* Lift effect */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  background-color: rgba(33, 230, 193, 0.15); /* More pronounced hover bg */
+}
+
+/* --- Contact Form Section --- */
+.contact-form {
+  max-width: 600px;
+  width: 100%;
+  margin-top: 30px;
+  background: rgba(0, 0, 0, 0.3); /* Darker semi-transparent background */
+  padding: 35px 40px; /* More padding */
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+  opacity: 0;
+  animation: fadeIn 1.5s 0.6s ease-in-out forwards;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin-bottom: 20px; /* More space */
+  padding: 14px 18px; /* Adjust padding */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Lighter border for inputs */
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.4); /* Darker input background */
+  color: #F0F0F0; /* Off-white text */
+  font-family: 'Poppins', sans-serif; /* Ensure font */
+  font-weight: 300;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+   color: #A0A0A0; /* Dimmer placeholder */
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+   /* --- Color Update --- */
+  border-color: #21E6C1; /* Accent border on focus */
+  box-shadow: 0 0 8px rgba(33, 230, 193, 0.3);
+}
+
+.sr-only { /* Keep this for accessibility */
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;
+}
+
+.contact-form button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  /* --- Color Update --- */
+  background-color: #21E6C1; /* Accent background */
+  color: #000000; /* Black text for contrast on bright button */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contact-form button:hover {
+  /* --- Color Update --- */
+  background-color: #07BEA0; /* Darker accent on hover */
+  color: #FFFFFF; /* White text on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(33, 230, 193, 0.3);
+}
+
+/* --- Footer Styling --- */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 250px;
+  width: calc(100% - 250px);
+  text-align: center;
+  font-size: 0.85rem; /* Smaller footer text */
+  font-weight: 300;
+  color: rgba(240, 240, 240, 0.6); /* Dimmer footer text */
+  background: rgba(0, 0, 0, 0.85); /* Match sidebar bg */
+  padding: 12px 0; /* Adjust padding */
+  z-index: 10;
+}
+
+/* --- Social Icons --- */
+.social-icons {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px; /* Increased gap */
+  opacity: 0;
+  animation: fadeIn 1.5s 0.8s ease-in-out forwards;
+}
+
+.social-icons a {
+  color: #A0A0A0; /* Dimmer default icon color */
+  font-size: 1.8rem; /* Slightly smaller icons */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+   /* --- Color Update --- */
+  color: #21E6C1; /* Accent color on hover */
+  transform: scale(1.2) translateY(-2px); /* More pronounced hover effect */
+}
+
+/* --- Resume Section --- */
+.resume-section {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.2); /* Darker background */
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.resume-section h1 {
+   margin-bottom: 20px;
+}
+.resume-section h2 { /* Use p tag for description instead? If h2, style it */
+  font-size: 1.2rem; /* Adjusted size */
+  font-weight: 300; /* Lighter */
+  color: #E0E0E0;
+  line-height: 1.8;
+  margin-bottom: 35px; /* More space */
+  text-shadow: none;
+  opacity: 0;
+  animation: fadeIn 1.5s 0.2s ease-in-out forwards;
+}
+
+.resume-section .download-btn {
+  display: inline-block;
+  padding: 12px 30px; /* More horizontal padding */
+   /* --- Color Update --- */
+  background-color: transparent; /* Transparent background */
+  color: #21E6C1; /* Accent color text */
+  border: 2px solid #21E6C1; /* Accent color border */
+  text-decoration: none;
+  border-radius: 30px; /* Pill shape */
+  font-size: 1.0rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 1.5s 0.4s ease-in-out forwards;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.resume-section .download-btn:hover {
+   /* --- Color Update --- */
+  background-color: #21E6C1; /* Fill with accent on hover */
+  color: #000000; /* Black text on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(33, 230, 193, 0.3);
+}
+.resume-section .download-btn i {
+  margin-left: 10px; /* Space before icon */
+  font-size: 0.9em; /* Slightly smaller icon */
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Adjustments (Check colors and fonts) */
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 2.5rem;
-  }
+    body { overflow-y: auto; }
+    .main-content {
+        margin-left: 0;
+        padding: 40px 20px; /* Adjust padding */
+        height: auto;
+        min-height: calc(100vh - 60px - 45px); /* Approx header/footer */
+        overflow-y: visible;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: sticky;
+        top: 0;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 15px; /* Reduced padding */
+        overflow-y: hidden;
+    }
+    .sidebar img {
+        width: 40px; height: 40px; margin-bottom: 0; border-width: 2px;
+    }
+    .sidebar nav {
+        margin-top: 0; flex-direction: row; gap: 5px; width: auto;
+        overflow-x: auto; justify-content: flex-end;
+    }
+     .sidebar nav a {
+         padding: 6px 8px; font-size: 0.8rem; flex-direction: column; gap: 2px;
+         border-radius: 4px; border-left-width: 3px; /* Thinner border */
+     }
+     .sidebar nav a i { font-size: 1rem; width: auto;}
+     .sidebar nav a span { font-size: 9px; text-align: center; }
 
-  section {
-    padding: 30px 10px;
-    margin: 20px auto;
-  }
+    .footer {
+        position: relative; left: 0; width: 100%; margin-top: auto;
+        padding: 10px 0; font-size: 0.8rem;
+    }
 
-  nav ul li {
-    display: block;
-    margin-bottom: 10px;
-  }
+    #main-content h1 { font-size: 2.0rem; }
+    #main-content.initial-content h1 { font-size: 2.2rem; }
+    #main-content h2 { font-size: 1.2rem; margin-bottom: 20px;}
+    #main-content.initial-content h2 { font-size: 1.3rem; }
+    #main-content h3, #main-content.initial-content h3 { font-size: 1.5rem; }
+    #main-content p { font-size: 1.0rem; }
+
+     .publications ul { padding: 0 10px; }
+     .publications ul li { padding: 15px; font-size: 1.0rem; }
+     .contact-form { padding: 25px 20px; max-width: 95%; }
+     .social-icons { gap: 15px; margin-top: 25px; }
+     .social-icons a { font-size: 1.5rem; }
+     .resume-section { padding: 30px 20px; }
+     .resume-section .download-btn { padding: 10px 25px; font-size: 0.9rem; }
 }
