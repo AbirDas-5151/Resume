@@ -7,349 +7,15 @@
     <meta name="keywords" content="AI Engineer, Abir Das, Artificial Intelligence, Machine Learning, Deep Learning">
     <meta name="author" content="Abir Das">
     <title>Abir Das - AI Engineer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <style>
-        /* General Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: Arial, sans-serif;
-            color: white;
-            overflow: hidden;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        .section {
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        .section h1 {
-            font-size: 3rem;
-            color: #00bfff;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .section p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .section a {
-            color: #0073e6;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .work, .education, .skills {
-            margin: 20px 0;
-        }
-
-        .work h2, .education h2, .skills h2 {
-            font-size: 2rem;
-            color: #ffcc00;
-            margin-bottom: 10px;
-        }
-
-        .contact-info a {
-            display: block;
-            color: #0073e6;
-            text-decoration: none;
-            margin: 5px 0;
-        }
-
-        .skills ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .skills ul li {
-            margin: 5px 0;
-        }
-
-        .publications ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .publications ul li {
-            margin: 10px 0;
-            font-size: 1.1rem;
-        }
-
-        /* Background */
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('Background.mp4');
-            background-size: cover;
-            background-position: center;
-            z-index: -1;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 250px;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            color: white;
-        }
-
-        .sidebar img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-        }
-
-        .sidebar nav {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .sidebar nav a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            text-align: center;
-            transition: all 0.3s;
-            padding: 10px 15px;
-            border-radius: 5px;
-            background-color: #333333;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-        }
-
-        .sidebar nav a:hover {
-            background-color: #0073e6;
-            box-shadow: 0 0 5px rgba(0, 115, 230, 0.6);
-        }
-
-        .sidebar nav a svg {
-            width: 24px;
-            height: 24px;
-            animation: rotate 2s linear infinite;
-        }
-
-        /* Main Content */
-        .main-content {
-            margin-left: 250px;
-            padding: 20px;
-            height: 100vh;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* Center content vertically */
-            align-items: center; /* Center content horizontally */
-            text-align: center;
-        }
-
-        .main-content h1, .main-content h2, .main-content h3 {
-            opacity: 0;
-            animation: fadeIn 2s ease-in-out forwards;
-        }
-
-        .main-content h1 {
-            font-size: 3.5rem;
-            font-weight: bold;
-            text-shadow: 2px 2px 5px rgba(233, 233, 11, 0.3);
-            color: aqua;
-        }
-
-        .main-content h2 {
-            font-size: 2rem;
-            font-weight: bold;
-            text-shadow: 2px 2px 5px rgba(167, 21, 225, 0.3);
-            color: white;
-        }
-
-        .main-content h3 {
-            font-size: 3.0rem;
-            font-weight: bold;
-            text-shadow: 2px 2px 5px rgba(21, 225, 167, 0.3);
-            color: white;
-        }
-
-        /* Fade-in sequence */
-        .main-content h1:nth-child(1) {
-            animation-delay: 0s;
-        }
-
-        .main-content h2:nth-child(2) {
-            animation-delay: 2s;
-        }
-
-        .main-content h3:nth-child(3) {
-            animation-delay: 4s;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .active {
-            display: block !important;
-        }
-
-        /* Contact Form */
-        .contact-form {
-            max-width: 500px;
-            width: 100%;
-        }
-
-        .contact-form input,
-        .contact-form textarea,
-        .contact-form button {
-            width: 100%;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .contact-form button {
-            background-color: #0073e6;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background-color: #005bb5;
-        }
-
-        .footer {
-            position: absolute;
-            bottom: 10px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.7);
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px 0;
-        }
-
-        /* Social Icons */
-        .social-icons {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .social-icons a {
-            display: inline-block;
-            margin: 0 10px;
-            color: white;
-            font-size: 24px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            color: #0073e6;
-        }
-
-        /* Publication Styles */
-        .publications ul {
-            list-style-type: none;
-            padding: 0;
-            text-align: left;
-        }
-
-        .publications ul li {
-            margin: 20px 0;
-            padding: 15px;
-            font-size: 1.1rem;
-            border-left: 5px solid #0073e6;
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 5px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .publications ul li:hover {
-            transform: translateX(10px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .publications ul li a {
-            color: #00bfff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .publications ul li a:hover {
-            text-decoration: underline;
-        }
-
-        /* Resume Section */
-        .resume-section {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-        }
-
-        .resume-section h2 {
-            font-size: 2.5rem;
-            color: #ffcc00;
-            margin-bottom: 20px;
-        }
-
-        .resume-section p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .resume-section .download-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #0073e6;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .resume-section .download-btn:hover {
-            background-color: #005bb5;
-        }
-    </style>
-</head>
-<body>
-    <!-- Google Analytics -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() {
@@ -358,110 +24,39 @@
         gtag('js', new Date());
         gtag('config', 'G-Y8JFCCH4YY'); // Replace with your Google Analytics ID
     </script>
+</head>
+<body>
 
-    <!-- Background -->
-    <div class="background"></div>
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <img src="photo2.JPG" alt="Abir Das Photo">
-        <nav>
-            <a data-section="Home"><i class="fas fa-home"></i> Home</a>
-            <a data-section="About"><i class="fas fa-user"></i> About Me</a>
-            <a data-section="Resume"><i class="fas fa-file"></i> Resume</a>
-            <a data-section="Publications"><i class="fas fa-book"></i> Publications</a>
-            <a data-section="Contact"><i class="fas fa-envelope"></i> Contact</a>
-        </nav>
+    <div class="video-background">
+        <div class="video-overlay"></div>
+        <video playsinline autoplay muted loop id="bg-video">
+            <source src="Background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
-    <!-- Main Content -->
-    <div class="main-content" id="main-content">
+    <aside class="sidebar">
+        <img src="photo2.JPG" alt="Abir Das Photo">
+        <nav>
+            <a href="#" data-section="home" class="active-link"><i class="fas fa-home"></i> <span>Home</span></a>
+            <a href="#" data-section="about"><i class="fas fa-user"></i> <span>About Me</span></a>
+            <a href="#" data-section="resume"><i class="fas fa-file"></i> <span>Resume</span></a>
+            <a href="#" data-section="publications"><i class="fas fa-book"></i> <span>Publications</span></a>
+            <a href="#" data-section="contact"><i class="fas fa-envelope"></i> <span>Contact</span></a>
+        </nav>
+    </aside>
+
+    <main id="main-content" class="main-content initial-content">
         <h1>ABIR DAS</h1>
         <h2>Bachelor of Science in Artificial Intelligence</h2>
         <h3>AI Engineer</h3>
-    </div>
+    </main>
 
-    <!-- Contact Form -->
-    <div id="contact-form" class="main-content" style="display: none;">
-        <h1>Contact Me</h1>
-        <form action="send_message.php" method="POST" class="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
+    <footer class="footer">
+        &copy; <span id="copyright-year"></span> Abir Das. All Rights Reserved.
+    </footer>
 
-    <!-- Footer -->
-    <div class="footer">
-        &copy; 2025 Abir Das. All Rights Reserved.
-    </div>
+    <script src="script.js"></script>
 
-    <!-- JavaScript -->
-    <script>
-        const sections = {
-            home: `
-                <div class="main-content" id="main-content">
-                    <h1>ABIR DAS</h1>
-                    <h2>Bachelor of Science in Artificial Intelligence</h2>
-                    <h3>Welcome to my portfolio!</h3>
-                </div>
-            `,
-            about: `
-                <h1>About Me</h1>
-                <p>I am an AI Engineer with hands-on experience developing cutting-edge solutions in computer vision, natural
-                language processing, and deep learning. Passionate about solving real-world challenges, I thrive on creating
-                scalable AI models and deploying them using advanced tools like TensorFlow, PyTorch, and AWS SageMaker.
-                With a strong foundation in algorithm development and a keen interest in exploring robotics and explainable
-                AI, I am eager to contribute to impactful projects that push the boundaries of artificial intelligence.</p>
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/abir-das-0042b1275/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/AbirDas-5151" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.instagram.com/_abir_09" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://scholar.google.com/citations?user=MlEmmggAAAAJ&hl=en" target="_blank"><i class="fas fa-book"></i></a>
-                    <a href="https://twitter.com/Abir_Das09" target="_blank"><i class="fab fa-twitter"></i></a>
-                </div>
-            `,
-            resume: `
-                <div class="resume-section">
-                    <h2>Resume</h2>
-                    <p>Download my resume to explore my skills and experience in detail. I am always eager to discuss how my expertise can contribute to your team.</p>
-                    <a href="Resume.pdf" class="download-btn" download>Download Resume</a>
-                </div>
-            `,
-            publications: `
-                <h1>Publications</h1>
-                <ul>
-                    <li><strong>Machine Fault Diagnosis Using Sensors Data and Explainable AI Techniques</strong> - Published in SCIE Journal (CMC) <a href="https://www.techscience.com/cmc/v80n3/57907" target="_blank">Read More</a></li>
-                    <li><strong>Advanced Machine Learning Models for Motor Imagery Analysis in Brain-Computer Interfaces</strong> - Under Review (Springer Nature Scientific Reports)</li>
-                </ul>
-            `,
-            contact: `
-                <h1>Contact</h1>
-                <form action="send_message.php" method="POST" class="contact-form">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-            `
-        };
-
-        document.querySelectorAll('.sidebar nav a').forEach(link => {
-            link.addEventListener('click', function () {
-                const section = this.getAttribute('data-section');
-                document.getElementById('main-content').innerHTML = sections[section] || '';
-            });
-        });
-
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slideshow-container .slide');
-
-        setInterval(() => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }, 3000);
-    </script>
 </body>
 </html>
