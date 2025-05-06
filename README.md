@@ -34,9 +34,6 @@ git clone https://github.com/your-username/your-resume-repo.git
 # Navigate into the directory
 cd your-resume-repo
 
-# Install dependencies (if React or Next.js)
-npm install
-
 # Run the development server
 npm run dev
 ```
