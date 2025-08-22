@@ -34,9 +34,9 @@ const sections = {
                    <a href="https://www.techscience.com/cmc/v80n3/57907" target="_blank">Read More</a>
               </li>
               <li>
-                  <strong>Enhanced EEG Signal Classification in Brain Computer Interfaces Using Hybrid Deep Learning Models</strong> - Under Review (Springer Nature Scientific Reports)
+                  <strong>Enhanced EEG Signal Classification in Brain Computer Interfaces Using Hybrid Deep Learning Models</strong> - Published in Springer Nature Scientific Reports
                   <br/>
-                   <em>(Under Review)</em>
+                  <a href="https://www.nature.com/articles/s41598-025-07427-2" target="_blank">Read More</a>
               </li>
           </ul>
       </div>
