@@ -38,6 +38,11 @@ const sections = {
                   <br/>
                   <a href="https://www.nature.com/articles/s41598-025-07427-2" target="_blank">Read More</a>
               </li>
+              <li>
+                  <strong>Few-Shot and Zero-Shot Learning for MRI Brain Tumor Classification Using CLIP and Vision Transformers</strong> - Published in MDPI Sensors
+                  <br/>
+                  <a href="https://www.mdpi.com/1424-8220/25/23/7341" target="_blank">Read More</a>
+              </li>
           </ul>
       </div>
   `,
